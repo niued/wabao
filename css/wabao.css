@@ -1,0 +1,30 @@
+dl{ margin:0; padding:0;}
+.top-bg{ margin:0 auto; width:100%; height:463px;background:url(../images/wbg01.jpg) center 0 no-repeat;}
+.top{margin:0 auto; width:990px; height:463px; background:url(../images/bg01.jpg) no-repeat; position:relative;}
+.top .join-num{ position:absolute; left:178px; top:390px; }
+.top .join-num span{ width:25px; height:30px;color:#fff; line-height:30px; font-size:20px;margin-right:7px;  display:inline-block; text-align:center; }
+
+.content-bg{margin:0 auto; width:100%; background:url(../images/wbg02.jpg) center 0 repeat-y;}
+
+/*index style*/
+.dig-box{ width:990px; margin:0 auto 20px;}
+.dig-box-top{ height:39px; background:url(../images/box-tbg.jpg) no-repeat;}
+.dig-box-top .title{ height:39px; line-height:39px; color:#fff; font-size:18px; font-weight:normal;text-indent:20px;}
+.dig-box-content{background:#fff;}
+
+.stepbox .step-img{ height:130px; background:url(../images/step.jpg) no-repeat; position:relative;}
+.stepbox .digbtn{display:block; position:absolute; top:36px; right:25px; width:50px; height:55px; text-indent:-9999px;}
+
+.prizebox .prize-img{height:492px; background:url(../images/prize.jpg) no-repeat;}
+
+.rulebox .rule-img{height:220px; background:url(../images/rule.jpg) no-repeat;}
+
+.getbox .getbox-step{ padding:20px;}
+.getbox .getbox-step dl{margin-bottom:15px;}
+.getbox .getbox-step dt{ font-size:14px; font-weight:bold; color:#780a11;}
+.getbox .getbox-step dd{ font-size:14px; color:#666; line-height:24px;}
+
+.specialbox .specialbox-ul{padding:20px;}
+.specialbox .specialbox-ul li{line-height:24px; list-style-type:disc; list-style-position: inside;}
+
+/*dig style*/

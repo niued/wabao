@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>挖宝</title>
+        <link href="css/global.css" rel="stylesheet" type="text/css" />
+        <link href="css/wabao.css" rel="stylesheet" type="text/css" />
+        <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+        
+        <style>
+        .mr15{ margin-right:15px;}
+        .mt20{ margin-top:20px;}
+        .mt10{ margin-top:10px;}
+        
+        .dig-main{ width:1010px; height:510px; background:url(images/digbg.jpg) no-repeat; margin:0 auto;}
+        /*map ...*/
+        .dig-main .dig-status{ width:220px; float:right; margin-right:10px; display:inline;}
+        .dig-statusbox{ width:220px; background:#fff; }
+        .dig-statusbox .title{ padding:0 10px; height:36px; line-height:36px; font-size:16px; color:#6e2f2f; border-bottom:1px solid #f7dea4; background:#fcfae5; font-weight:normal;}
+        .dig-statusbox .title .total{ float:right; color:#666; font-size:12px; font-weight:normal;}
+        .dig-statusbox .content{ padding:14px 14px 5px;}
+        .dig-statusbox .btn{height:40px; line-height:40px;}
+        .dig-statusbox .ybtn{display:inline-block; width:87px; height:38px; line-height:38px; text-align:center; 
+        			background:url(images/user-status.png) no-repeat; font-size:18px; float:left; color:#730910;}
+       	.dig-statusbox .get{height:28px; line-height:28px; margin:3px 0;}
+       	.dig-statusbox .pitem{color:#eb2f4a;}
+       	.dig-statusbox .user-list{ padding:0 0 13px 0;}
+       	.dig-statusbox .user-list li{float:left; width:28px; height:28px; margin:10px 0 0 13px;}
+       	.dig-statusbox .method{ padding:13px;}
+       	.dig-statusbox .method .ntitle{ font-size:16px; color:#6e2f2f;  }
+       	.dig-statusbox .method .con{ text-indent:2em; line-height:20px;  }
+       	.dig-statusbox .method .detail{ text-align:right;}
+       	.dig-statusbox .method .detail a{color:#0099cc;}
+        </style>
+	</head>
+	<body style="background:#fcd57a;">
+		<div class="top-bg">
+			<div class="top">
+				<div class="join-num">
+					<span>1</span>
+					<span>2</span>
+					<span>3</span>
+					<span>4</span>
+					<span>5</span>
+					<span>6</span>
+				</div>
+			</div>
+		</div>
+		<div class="content-bg">
+			<div class="dig-main">
+				<div class="dig-main-map"></div>
+				<div class="dig-status">
+					<div class="dig-statusbox mt20">
+						<h4 class="title">会员登录</h4>
+						<div class="content">
+							<p class="btn"><a class="ybtn mr15" href="">注册</a><a class="ybtn" href="">登录</a></p>
+							<p class="get">
+								<span>您已获得:</span>
+								<img src="images/qianicon.png" alt=""/>
+								<span class="pitem">100元现金抵用券</span>
+								<a href="#"><img src="images/dropicon.png" alt="" /></a>
+							</p>
+						</div>
+					</div>
+					<div class="dig-statusbox mt10">
+						<h4 class="title">大家都在挖<a href="#" class="total">共20000人&gt;&gt;</a></h4>
+						<ul class="user-list">
+							<li><a href="#"><img src="images/headicon.png" /></a></li>
+							<li><a href="#"><img src="images/headicon.png" /></a></li>
+							<li><a href="#"><img src="images/headicon.png" /></a></li>
+							<li><a href="#"><img src="images/headicon.png" /></a></li>
+							<li><a href="#"><img src="images/headicon.png" /></a></li>
+							<li><a href="#"><img src="images/headicon.png" /></a></li>
+							<li><a href="#"><img src="images/headicon.png" /></a></li>
+							<li><a href="#"><img src="images/headicon.png" /></a></li>
+							<li><a href="#"><img src="images/headicon.png" /></a></li>
+							<li><a href="#"><img src="images/headicon.png" /></a></li>
+							<li><a href="#"><img src="images/headicon.png" /></a></li>
+							<li><a href="#"><img src="images/headicon.png" /></a></li>
+							<li><a href="#"><img src="images/headicon.png" /></a></li>
+							<li><a href="#"><img src="images/headicon.png" /></a></li>
+							<li><a href="#"><img src="images/headicon.png" /></a></li>
+							<i class="clearfix"></i>
+						</ul>
+					</div>
+					<div class="dig-statusbox mt10">
+						<dl class="method">
+							<dt class="ntitle">挖宝秘籍</dt>
+							<dd class="con">挖宝者可在悠哉旅游地图中所提供的43个悠哉宝藏埋藏地，花费5悠币可针对1个目的地进行1次挖宝。系统按一定奖品赠送概率回馈给参与者不同的宝藏（奖品）。</dd>
+							<dd class="detail"><a href="#">查看详情&gt;&gt;</a></dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
+		<script type="text/javascript">
+			$(function(){
+				
+			})
+		</script>
+		
+	</body>
+</html>
