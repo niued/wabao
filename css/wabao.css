@@ -28,3 +28,68 @@ dl{ margin:0; padding:0;}
 .specialbox .specialbox-ul li{line-height:24px; list-style-type:disc; list-style-position: inside;}
 
 /*dig style*/
+
+.mr15{ margin-right:15px;}
+.mt20{ margin-top:20px;}
+.mt10{ margin-top:10px;}
+.fn-left{float:left;}
+.fn-right{float:right;}
+.money{color: #ff6600; font-size: 18px;}
+
+.dig-main{ width:1010px; height:510px; background:url(../images/digbg.jpg) no-repeat; margin:0 auto;}
+/*map ...*/
+.dig-main .dig-status{ width:220px; float:right; margin-right:10px; display:inline;}
+.dig-statusbox{ width:220px; background:#fff; }
+.dig-statusbox .title{ padding:0 10px; height:36px; line-height:36px; font-size:16px; color:#6e2f2f; border-bottom:1px solid #f7dea4; background:#fcfae5; font-weight:normal;}
+.dig-statusbox .title .total{margin-left:40px; color:#666; font-size:12px; font-weight:normal;}
+.dig-statusbox .content{ padding:14px 14px 5px;}
+.dig-statusbox .btn{height:40px; line-height:40px;}
+.dig-statusbox .ybtn{display:inline-block; width:87px; height:38px; line-height:38px; text-align:center; 
+			background:url(../images/user-status.png) no-repeat; font-size:18px; float:left; color:#730910;}
+.dig-statusbox .get{height:28px; line-height:28px; margin:3px 0;}
+.dig-statusbox .pitem{color:#eb2f4a;}
+.dig-statusbox .user-list{height:130px;}
+.dig-statusbox .user-list li{float:left; display:inline; width:28px; height:28px; margin:12px 0 0 13px;}
+.dig-statusbox .method{ padding:13px;}
+.dig-statusbox .method .ntitle{ font-size:16px; color:#6e2f2f;  }
+.dig-statusbox .method .con{ text-indent:2em; line-height:20px;  }
+.dig-statusbox .method .detail{ text-align:right;}
+.dig-statusbox .method .detail a{color:#0099cc;}
+
+.dig-main2{ width:990px; height:1025px; margin:5px auto 0;}
+.dig-pin{width:600px;}
+.dig-pin .top{height:40px; line-height:40px; background:#b4742f; padding:0 20px;}
+.dig-pin .top h4{color:#ffffff; font-size:22px; font-weight:bold;}
+.dig-pin .top .total{color:#fbce9c;}
+.dig-pin .con{background:#f2f2f2; height:985px;}
+.dig-pin .con .col{width:186px; margin-left:10px; float:left; display:inline;}
+.dig-pin .con .item{border:1px solid #cdcdcd; min-height:100px; margin-top:10px; background:#fff;}
+.dig-pin .item .title{font-size:12px; padding:10px; font-weight:normal; line-height:20px; color:#000;}
+.dig-pin .item .user-num{text-align:right; margin-bottom: 20px;}
+.dig-pin .item .user-num a{color:#999;}
+.dig-pin .item .user-num a:hover{ text-decoration: underline;}
+
+.dig-main3{width:990px; margin:15px auto 0;}
+.dig-main3 .top{height:44px; line-height:44px; background:#b4742f; padding:0 20px;}
+.dig-main3 .top h4{color:#ffffff; font-size:22px; font-weight:bold;}
+.dig-main3 .tab{ margin-top:8px;}
+.dig-main3 .tab li{float:left; width: 97px; height: 36px; text-align: center; line-height: 36px; font-size: 16px; font-weight: bold; color: #dd872b; background: url(../images/tab.png) 0 -49px no-repeat; margin-left: 10px; cursor: pointer;}
+.dig-main3 .tab li.cur{color:#6d3316; background-position: 0 0;}
+.dig-main3 .con{ background: #fff;}
+.dig-main3 .con .imglist{ height: 290px; padding: 12px 0;}
+.dig-main3 .imglist li{width: 310px; height: 290px; display:inline;  float: left; border:1px solid #cdcdcd; background: #fff; margin-left: 12px;}
+.dig-main3 .imglist .img{margin: 10px 0 10px 10px; width: 290px; height: 174px; display: block;}
+.dig-main3 .imglist .title{ font-size: 14px; font-weight: normal; line-height: 24px; color: #4a0a05; padding:0 10px;}
+.dig-main3 .imglist .detail{height:33px; line-height:33px; padding:0 10px;}
+.dig-main3 .imglist .detail .detailbtn{height:33px; width: 89px; display: block; float: right; background: url(../images/detailbtn.png) no-repeat;}
+
+.dig-main3 .wordlist{ padding: 0 15px 25px;}
+.dig-main3 .wordlist .item{ border-bottom: 1px solid #eee; padding: 15px;}
+.dig-main3 .wordlist .title{ height: 24px; line-height: 24px; font-size: 14px; }
+.dig-main3 .wordlist .title a{ color: #0099cc;} 
+.dig-main3 .wordlist .con{ text-align: right; height: 20px; line-height: 20px; } 
+
+.dig-main4{width: 990px; height: 255px; margin: 15px auto 50px; background: url(../images/moreact.jpg) no-repeat; }
+.dig-main4 .imglist{height:177px; margin:56px 0 0 0; float:left; display:inline;}
+.dig-main4 .imglist li{ border: 4px solid #511600; margin-left:16px; background:#511600; float:left; display:inline;}
+.dig-main4 .imglist li img{width:218px; height:166px; }
