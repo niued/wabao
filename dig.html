@@ -11,6 +11,9 @@
         .mr15{ margin-right:15px;}
         .mt20{ margin-top:20px;}
         .mt10{ margin-top:10px;}
+        .fn-left{float:left;}
+        .fn-right{float:right;}
+        .money{color: #ff6600; font-size: 18px;}
         
         .dig-main{ width:1010px; height:510px; background:url(images/digbg.jpg) no-repeat; margin:0 auto;}
         /*map ...*/
@@ -31,6 +34,39 @@
        	.dig-statusbox .method .con{ text-indent:2em; line-height:20px;  }
        	.dig-statusbox .method .detail{ text-align:right;}
        	.dig-statusbox .method .detail a{color:#0099cc;}
+       	
+       	.dig-main2{ width:990px; height:1025px; margin:5px auto 0;}
+       	.dig-pin{width:600px;}
+		.dig-pin .top{height:40px; line-height:40px; background:#b4742f; padding:0 20px;}
+		.dig-pin .top h4{color:#ffffff; font-size:22px; font-weight:bold;}
+		.dig-pin .top .total{color:#fbce9c;}
+		.dig-pin .con{background:#f2f2f2; height:985px;}
+		.dig-pin .con .col{width:186px; margin-left:10px; float:left;}
+		.dig-pin .con .item{border:1px solid #cdcdcd; min-height:100px; margin-top:10px; background:#fff;}
+		.dig-pin .item .title{font-size:12px; padding:10px; font-weight:normal; line-height:20px; color:#000;}
+		.dig-pin .item .user-num{text-align:right; margin-bottom: 20px;}
+		.dig-pin .item .user-num a{color:#999;}
+		.dig-pin .item .user-num a:hover{ text-decoration: underline;}
+		
+		.dig-main3{width:990px; margin:15px auto 0;}
+		.dig-main3 .top{height:44px; line-height:44px; background:#b4742f; padding:0 20px;}
+		.dig-main3 .top h4{color:#ffffff; font-size:22px; font-weight:bold;}
+		.dig-main3 .tab{ margin-top:8px;}
+		.dig-main3 .tab li{float:left; width: 97px; height: 36px; text-align: center; line-height: 36px; font-size: 16px; font-weight: bold; color: #dd872b; background: url(images/tab.png) 0 -49px no-repeat; margin-left: 10px; cursor: pointer;}
+		.dig-main3 .tab li.cur{color:#6d3316; background-position: 0 0;}
+		.dig-main3 .con{ background: #fff;}
+		.dig-main3 .con .imglist{ height: 290px; padding: 12px 0;}
+		.dig-main3 .imglist li{width: 310px; height: 290px;  float: left; border:1px solid #cdcdcd; background: #fff; margin-left: 12px;}
+		.dig-main3 .imglist .img{margin: 10px 0 10px 10px; width: 290px; height: 174px; display: block;}
+		.dig-main3 .imglist .title{ font-size: 14px; font-weight: normal; line-height: 24px; color: #4a0a05; padding:0 10px;}
+		.dig-main3 .imglist .detail{height:33px; line-height:33px; padding:0 10px;}
+		.dig-main3 .imglist .detail .detailbtn{height:33px; width: 89px; display: block; float: right; background: url(images/detailbtn.png) no-repeat;}
+		
+		.dig-main3 .wordlist{ padding: 0 15px 25px;}
+		.dig-main3 .wordlist .item{ border-bottom: 1px solid #eee; padding: 15px;}
+		.dig-main3 .wordlist .title{ height: 24px; line-height: 24px; font-size: 14px; }
+		.dig-main3 .wordlist .title a{ color: #0099cc;} 
+		.dig-main3 .wordlist .con{ text-align: right; height: 20px; line-height: 20px; } 
         </style>
 	</head>
 	<body style="background:#fcd57a;">
@@ -47,6 +83,8 @@
 			</div>
 		</div>
 		<div class="content-bg">
+			
+			<!-- main begin -->
 			<div class="dig-main">
 				<div class="dig-main-map"></div>
 				<div class="dig-status">
@@ -92,7 +130,175 @@
 					</div>
 				</div>
 			</div>
+			<!-- main end -->
+
+			<!-- main2 begin -->
+			<div class="dig-main2">
+				<div class="dig-pin fn-left">
+					<div class="top">
+						<h4 class=" fn-left">宝藏地我来晒</h4>
+						<span class="total fn-right">讨论人数：45641人</span>
+					</div>
+					<div class="con">
+						<div class="col">
+							<div class="item">
+								<a href="#">
+									<img alt="" src="http://r.uzaicdn.com/TeJiaUploadImages/201283318.jpg" width="184px" height="100px" />
+								</a>
+								<h4 class="title">普通青年，文疫情年都说好的六大浪漫地！</h4>
+								<p class="user-num"><a href="#">跟帖（100）</a><a href="#">顶（35）</a></p>
+							</div>
+							<div class="item">
+								<a href="#">
+									<img alt="" src="http://r.uzaicdn.com/TeJiaUploadImages/201283318.jpg" width="184px" height="300px" />
+								</a>
+								<h4 class="title">普通青年，文疫情年都说好的六大浪漫地！</h4>
+								<p class="user-num"><a href="#">跟帖（100）</a><a href="#">顶（35）</a></p>
+							</div>
+							<div class="item">
+								<a href="#">
+									<img alt="" src="http://r.uzaicdn.com/TeJiaUploadImages/201283318.jpg" width="184px" height="240px" />
+								</a>
+								<h4 class="title">普通青年，文疫情年都说好的六大浪漫地！</h4>
+								<p class="user-num"><a href="#">跟帖（100）</a><a href="#">顶（35）</a></p>
+							</div>
+						</div>
+						<div class="col">
+							<div class="item">
+								<a href="#">
+									<img alt="" src="http://r.uzaicdn.com/TeJiaUploadImages/201283318.jpg" width="184px" height="200px" />
+								</a>
+								<h4 class="title">普通青年，文疫情年都说好的六大浪漫地！</h4>
+								<p class="user-num"><a href="#">跟帖（100）</a><a href="#">顶（35）</a></p>
+							</div>
+							<div class="item">
+								<a href="#">
+									<img alt="" src="http://r.uzaicdn.com/TeJiaUploadImages/201283318.jpg" width="184px" height="240px" />
+								</a>
+								<h4 class="title">普通青年，文疫情年都说好的六大浪漫地！</h4>
+								<p class="user-num"><a href="#">跟帖（100）</a><a href="#">顶（35）</a></p>
+							</div>
+							<div class="item">
+								<a href="#">
+									<img alt="" src="http://r.uzaicdn.com/TeJiaUploadImages/201283318.jpg" width="184px" height="200px" />
+								</a>
+								<h4 class="title">普通青年，文疫情年都说好的六大浪漫地！</h4>
+								<p class="user-num"><a href="#">跟帖（100）</a><a href="#">顶（35）</a></p>
+							</div>
+						</div>
+						<div class="col">
+							<div class="item">
+								<a href="#">
+									<img alt="" src="http://r.uzaicdn.com/TeJiaUploadImages/201283318.jpg" width="184px" height="180px" />
+								</a>
+								<h4 class="title">普通青年，文疫情年都说好的六大浪漫地！</h4>
+								<p class="user-num"><a href="#">跟帖（100）</a><a href="#">顶（35）</a></p>
+							</div>
+							<div class="item">
+								<a href="#">
+									<img alt="" src="http://r.uzaicdn.com/TeJiaUploadImages/201283318.jpg" width="184px" height="170px" />
+								</a>
+								<h4 class="title">普通青年，文疫情年都说好的六大浪漫地！</h4>
+								<p class="user-num"><a href="#">跟帖（100）</a><a href="#">顶（35）</a></p>
+							</div>
+							<div class="item">
+								<a href="#">
+									<img alt="" src="http://r.uzaicdn.com/TeJiaUploadImages/201283318.jpg" width="184px" height="290px" />
+								</a>
+								<h4 class="title">普通青年，文疫情年都说好的六大浪漫地！</h4>
+								<p class="user-num"><a href="#">跟帖（100）</a><a href="#">顶（35）</a></p>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+				<div class="dig-weibo fn-right">
+					<iframe width="380" height="800"  frameborder="0" scrolling="no" src="http://widget.weibo.com/livestream/listlive.php?language=zh_cn&width=380&height=800&uid=1736082380&skin=1&refer=1&appkey=&pic=0&titlebar=1&border=1&publish=1&atalk=1&recomm=0&at=0&dpc=1"></iframe>
+				</div>
+			</div>
+			<!-- main2 end -->
 			
+			<!-- main3 begin -->
+			<div class="dig-main3">
+				<div class="top">
+					<h4 class="fn-left">宝藏地我来晒</h4>
+					<ul class="tab fn-right">
+						<li class="cur">国内游</li>
+						<li>出境游</li>
+					</ul>
+				</div>
+				<div class="con">
+					<ul class="imglist">
+						<li class="item">
+							<a href="#" class="img">
+								<img src="http://r.uzaicdn.com/TeJiaUploadImages/201283318.jpg" width="290px" height="174px" alt=""/>
+							</a>
+							<h4 class="title">海南三亚天堂森林公园、南山文化苑美食全景双飞5日游</h4>
+							<p class="detail"><span class="money">￥2650</span><span>起</span><a href="#" class="detailbtn"></a></p>
+						</li>
+						<li class="item">
+							<a href="#" class="img">
+								<img src="http://r.uzaicdn.com/TeJiaUploadImages/201283318.jpg" width="290px" height="174px" alt=""/>
+							</a>
+							<h4 class="title">海南三亚天堂森林公园、南山文化苑美食全景双飞5日游</h4>
+							<p class="detail"><span class="money">￥2650</span><span>起</span><a href="#" class="detailbtn"></a></p>
+						</li>
+						<li class="item">
+							<a href="#" class="img">
+								<img src="http://r.uzaicdn.com/TeJiaUploadImages/201283318.jpg" width="290px" height="174px" alt=""/>
+							</a>
+							<h4 class="title">海南三亚天堂森林公园、南山文化苑美食全景双飞5日游</h4>
+							<p class="detail"><span class="money">￥2650</span><span>起</span><a href="#" class="detailbtn"></a></p>
+						</li>
+					</ul>
+					<ul class="wordlist">
+						<li class="item">
+							<p class="title"><a href="#">【0利特价】桂林漓江、阳朔、遇龙河漂流四星美食纯玩双飞4日游</a></p>
+							<p class="con"><span class="fn-left">精华景点全含，豪华外宾船游漓江，赠市值220元/人《印象·刘三姐》和歌仙刘三姐，好评如潮</span><span class="money">￥2650</span><span>起</span></p>
+						</li>
+						<li class="item">
+							<p class="title"><a href="#">【0利特价】桂林漓江、阳朔、遇龙河漂流四星美食纯玩双飞4日游</a></p>
+							<p class="con"><span class="fn-left">精华景点全含，豪华外宾船游漓江，赠市值220元/人《印象·刘三姐》和歌仙刘三姐，好评如潮</span><span class="money">￥2650</span><span>起</span></p>
+						</li>
+						<li class="item">
+							<p class="title"><a href="#">【0利特价】桂林漓江、阳朔、遇龙河漂流四星美食纯玩双飞4日游</a></p>
+							<p class="con"><span class="fn-left">精华景点全含，豪华外宾船游漓江，赠市值220元/人《印象·刘三姐》和歌仙刘三姐，好评如潮</span><span class="money">￥2650</span><span>起</span></p>
+						</li>
+						<li class="item">
+							<p class="title"><a href="#">【0利特价】桂林漓江、阳朔、遇龙河漂流四星美食纯玩双飞4日游</a></p>
+							<p class="con"><span class="fn-left">精华景点全含，豪华外宾船游漓江，赠市值220元/人《印象·刘三姐》和歌仙刘三姐，好评如潮</span><span class="money">￥2650</span><span>起</span></p>
+						</li>
+				
+					</ul>
+					
+				</div>
+			</div>
+			<!-- main3 end -->
+			
+			<style>
+			.dig-main4{width: 990px; height: 255px; margin: 15px auto 50px; background: url(images/moreact.jpg) no-repeat; }
+			.dig-main4 .imglist{height:177px; margin:56px 0 0 20px; float:left; display:inline;}
+			.dig-main4 .imglist li{ border: 4px solid #511600; margin-left:15px; background:#511600; float:left;}
+			.dig-main4 .imglist li img{width:218px; height:166px; }
+			</style>
+			<!-- main4 begin -->
+			<div class="dig-main4">
+				<ul class="imglist">
+					<li>
+						<a href="#"><img src="http://r.uzaicdn.com/TeJiaUploadImages/201283318.jpg"  alt=""/></a>
+					</li>
+					<li>
+						<a href="#"><img src="http://r.uzaicdn.com/TeJiaUploadImages/201283318.jpg"  alt=""/></a>
+					</li>
+					<li>
+						<a href="#"><img src="http://r.uzaicdn.com/TeJiaUploadImages/201283318.jpg"  alt=""/></a>
+					</li>
+					<li>
+						<a href="#"><img src="http://r.uzaicdn.com/TeJiaUploadImages/201283318.jpg"  alt=""/></a>
+					</li>
+				</ul>
+			</div>
+			<!-- main4 end -->
 		</div>
 		
 		<script type="text/javascript">
