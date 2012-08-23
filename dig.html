@@ -42,7 +42,7 @@
 			.dig-main-map .maptitle{width:322px; height:70px; top:18px; left:200px; position:absolute; background:url(images/maptitle.png);}
 			.dig-main-map .maptitle .title{color:#4f0205; font-size:30px; margin-left:24px; line-height:55px;}
 			
-			.wa_box{width:255px; position:absolute; background:#fff;}
+			.wa_box{width:255px; position:absolute; background:#fff; box-shadow:2px 2px 5px #666;}
 			.wa_box .r{color:#ff0000;}
 			.wa_box .c{color:#aaa;}
 			.wa_box .gr{color:#6e2f2f;}
@@ -62,8 +62,9 @@
 			.wa_box .info{display:inline; margin-left:20px; padding:5px 0;}
 			.wa_box .info p{ line-height:18px;}
 
-			.wa_box .wa-bottom{width:255px; height:55px; background:url(images/wa-bottom.png);}
-			.wa_box .wa-bottom p{padding:0 10px 0 65px; line-height:25px;}
+			.wa_box .wa-bottom{width:255px; height:55px; background:url(images/wa-bottom.png) no-repeat;}
+			.wa_box .wa-bottom p{padding:0 10px 0 65px; line-height:25px; }
+			.wa_box .wa-bottom .gr{width:125px;height:25px; overflow:hidden;}
 			</style>
 			
 			<!-- main begin -->
@@ -85,7 +86,8 @@
 					<div class="maptitle"><span class="title" id="J_mapTitle">世界地图</span></div>
 					
 					
-					<div class="wa_box">
+					<!--挖宝box -->
+					<div class="wa_box" id="J_waBox" style="display:none;">
 						<div class="top">
 							<a href="#" class="vimg fn-left"><img src="images/img01.jpg" width="125px" height="85px;" alt="" /></a>
 							<dl class="detail fn-left">
@@ -108,7 +110,7 @@
 							<p><span class="fn-left gr">美国某某某，二日</span><span class="fn-right c">2分钟前</span></p>
 						</div>
 					</div>
-					
+					<!--挖宝box -->
 					
 				</div>
 				
@@ -370,6 +372,13 @@
 
 		
 		<script type="text/javascript">
+			$.fn.extend({
+				showWBtip:function(pos){
+					
+					$("#J_waBox").show().css({"left":pos.left,"top":pos.top});
+				}
+			});
+			
 			$(function(){
 				uzaiDi.init();
 
@@ -398,6 +407,10 @@
 				}
 				
 			}
+			
+			
+			
+			
 			
 		</script>
 		
