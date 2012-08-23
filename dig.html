@@ -5,10 +5,11 @@
         <title>挖宝</title>
         <link href="css/global.css" rel="stylesheet" type="text/css" />
         <link href="css/wabao.css" rel="stylesheet" type="text/css" />
-        
+        <link href="js/colorbox/example4/colorbox.css" type="text/css" rel="stylesheet" />
         <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/raphael.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/china.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/jquery.colorbox.js" type="text/javascript" charset="utf-8"></script>
        
 	</head>
 	<body style="background:#fcd57a;">
@@ -53,10 +54,11 @@
 			.wa_box .top .detail dt{line-height:18px;}
 			.wa_box .top .detail dd{ right:0px; bottom:0px; position:absolute;}
 			
-			.wa_box .wa-main{height:46px; margin:5px 0 10px 10px;}
+			.wa_box .wa-main{height:46px; margin:5px 0 10px 10px; position:relative;}
 			
 			.wa_box .wa-main .ybtn{display:inline-block; width:96px; height:45px; line-height:45px; text-align:center; 
 			background:url(images/ybtn2.png) no-repeat; font-size:22px; color:#730910;}
+			.wa_box .wa-main .wa_chutou{ display:block;width:96px; height:45px; position:absolute; background:url(images/chutou.gif) center no-repeat;}
 			.wa_box .jindu{ width:16px; height:46px; display:inline; margin-left:5px; background:url(images/jindu.png) no-repeat; position:relative;}
 			.wa_box .jindu-per{ position:absolute; background:#0099cc; width:6px; left:5px; bottom:6px; display:block;}
 			.wa_box .info{display:inline; margin-left:20px; padding:5px 0;}
@@ -96,7 +98,8 @@
 							</dl>
 						</div>
 						<div class="wa-main">
-							<a href="javascript:;" class="ybtn fn-left">挖</a>
+							<a href="javascript:;" class="ybtn fn-left" id="J_waBtn">挖</a>
+							<span class="wa_chutou" id="J_waChuTou" style="display:none;"></span>
 							<div class="jindu fn-left">
 								<span class="jindu-per" style="height:35px;"></span>
 							</div>
@@ -369,12 +372,38 @@
 			<!-- main4 end -->
 		</div>
 		
+		<style>
+			.result-box{width:480px; border:2px solid #71090f; border-radius:2px; margin:20px; background:#fff;}
+			.result-box .title{background:#f7ce1e; height:35px; line-height:35px; position:relative;}
+			.result-box .title h3{color:#cc3702; text-indent:20px;}
+			.result-box .con{padding:10px 20px;}
+			.result-box .con .item{text-align:center; line-height:30px; height:30px;}
+			.result-box .con .itemicon{text-align:center; }
+			.result-box .con .itemphone{ height:30px; line-height:30px; margin-top:15px;}
+			.result-box .con .itemword{ height:30px; line-height:30px; margin-top:10px;}
+			.result-box .con .iteminfo{margin-top:20px;}
 
+			.result-box .lb{width:120px; text-align:right; float:left;}
+			.result-box .txt{ height:26px;border:1px solid #ccc;}
+			.result-box .itemphone .txt{width:140px;}
+			.result-box .itemword .txt{width:250px; margin-right:4px;}
+			.result-box .pubbtn{width:58px; height:30px; background:url(images/result-sprite.png) 0 -22px no-repeat; line-height:30px; display:inline-block; color:#fff; font-size:14px; font-weight:bold; text-align:center; border:none; }
+			
+		</style>
+		<div class="result-box">
+			<div class="title"><h3>获奖提示</h3><a href="#"></a></div>
+			<div class="con">
+				<div class="item"><span>恭喜您挖到了“欧洲七日游”免费旅游券</span></div>
+				<div class="itemicon"><img src="images/jiang01.jpg" width="280px" height="135px;" alt=""/></div>
+				<div class="itemphone"><label class="lb">输入手机号码领取：</label><input type="text" class="txt" /></div>
+				<div class="itemword"><label class="lb">奖后心声：</label><input type="text" class="txt" /><input type="button" class="pubbtn" href="javascript:;" value="发布" /></div>
+				<div class="iteminfo"><span>稍后我们将奖品编号发送您手机，如有问题请致电400-000-8888</span></div>
+			</div>
+		</div>
 		
 		<script type="text/javascript">
 			$.fn.extend({
 				showWBtip:function(pos){
-					
 					$("#J_waBox").show().css({"left":pos.left,"top":pos.top});
 				}
 			});
@@ -391,6 +420,7 @@
 				init:function(){
 					var that = this;
 					that.selMap();
+					that.waclick();
 				},
 				//选择一个国家
 				selMap:function(){
@@ -403,6 +433,14 @@
 						$(".J_worldMap").show(300);
 						$("#J_mapTitle").text("世界地图");
 						$("#J_mapDom").html("");
+						
+					})
+				},
+				waclick:function(){
+					$("#J_waBtn").bind("click",function(){
+						var that=$(this);
+						$("#J_waChuTou").show();
+						$.colorbox({html:$(".result-box"),fixed:true,opacity:0.1,overlayClose:false});
 					})
 				}
 				

@@ -289,7 +289,7 @@ text:R.text(485,125,"吉林").attr(textattr)};
 				function(){
 					current && china[current]['path'].animate({fill: china[current].hasPrize?"#f48029":"#825223"}, 500); 
 				}).bind("click",function(){
-					$(this).showWBtip({"left":china[state].x-255+110,"top":china[state].y-125+20});
+					$(this).showWBtip({"left":china[state].x-275+110,"top":china[state].y-125+20});
 				})				
 				text&&$(text[0]).hover(
 				function(){
@@ -301,7 +301,7 @@ text:R.text(485,125,"吉林").attr(textattr)};
 				function(){
 					current && china[current]['path'].animate({fill: china[current].hasPrize?"#f48029":"#825223"}, 500); 
 				}).bind("click",function(){
-					$(this).showWBtip({"left":china[state].x-255+110,"top":china[state].y-125+20});
+					$(this).showWBtip({"left":china[state].x-275+110,"top":china[state].y-125+20});
 				})
 				
 			}
