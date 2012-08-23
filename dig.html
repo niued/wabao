@@ -9,7 +9,7 @@
         <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/raphael.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/china.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/aus.js" type="text/javascript" charset="utf-8"></script>
+       
 	</head>
 	<body style="background:#fcd57a;">
 		<div class="top-bg">
@@ -41,10 +41,34 @@
 			
 			.dig-main-map .maptitle{width:322px; height:70px; top:18px; left:200px; position:absolute; background:url(images/maptitle.png);}
 			.dig-main-map .maptitle .title{color:#4f0205; font-size:30px; margin-left:24px; line-height:55px;}
+			
+			.wa_box{width:255px; position:absolute; background:#fff;}
+			.wa_box .r{color:#ff0000;}
+			.wa_box .c{color:#aaa;}
+			.wa_box .gr{color:#6e2f2f;}
+			
+			.wa_box .top{border-bottom:1px dashed #ccc; height:108px;}
+			.wa_box .top .vimg{margin:10px; display:inline;}
+			.wa_box .top .detail{width:105px; height:85px; overflow:hidden; position:relative; margin:10px 0 0 0; display:inline;}
+			.wa_box .top .detail dt{line-height:18px;}
+			.wa_box .top .detail dd{ right:0px; bottom:0px; position:absolute;}
+			
+			.wa_box .wa-main{height:46px; margin:5px 0 10px 10px;}
+			
+			.wa_box .wa-main .ybtn{display:inline-block; width:96px; height:45px; line-height:45px; text-align:center; 
+			background:url(images/ybtn2.png) no-repeat; font-size:22px; color:#730910;}
+			.wa_box .jindu{ width:16px; height:46px; display:inline; margin-left:5px; background:url(images/jindu.png) no-repeat; position:relative;}
+			.wa_box .jindu-per{ position:absolute; background:#0099cc; width:6px; left:5px; bottom:6px; display:block;}
+			.wa_box .info{display:inline; margin-left:20px; padding:5px 0;}
+			.wa_box .info p{ line-height:18px;}
+
+			.wa_box .wa-bottom{width:255px; height:55px; background:url(images/wa-bottom.png);}
+			.wa_box .wa-bottom p{padding:0 10px 0 65px; line-height:25px;}
 			</style>
 			
 			<!-- main begin -->
 			<div class="dig-main">
+			
 				<div class="dig-main-map">
 					<div class="detailmap">
 						<div id="J_mapDom" style="width:560px; height:470px; position:absolute; left:110px; top:20px;"></div>
@@ -59,6 +83,33 @@
 						<a href="javascript:;" class="map6 J_toMap" title="澳洲"></a>
 					</div>
 					<div class="maptitle"><span class="title" id="J_mapTitle">世界地图</span></div>
+					
+					
+					<div class="wa_box">
+						<div class="top">
+							<a href="#" class="vimg fn-left"><img src="images/img01.jpg" width="125px" height="85px;" alt="" /></a>
+							<dl class="detail fn-left">
+								<dt><a href="#">张家界、凤凰古城猛洞飞纯玩五日游、凤凰古城</a></dt>
+								<dd><span class="money">￥2650</span><span>起</span></dd>
+							</dl>
+						</div>
+						<div class="wa-main">
+							<a href="javascript:;" class="ybtn fn-left">挖</a>
+							<div class="jindu fn-left">
+								<span class="jindu-per" style="height:35px;"></span>
+							</div>
+							<div class="info fn-left">
+								<p><span class="c">您的悠币：</span><span class="r">50</span></p>
+								<p><span>336人在此挖宝</span></p>
+							</div>
+						</div>
+						<div class="wa-bottom">
+							<p><span class="fn-left gr">100元现金</span><span class="fn-right c">2分钟前</span></p>
+							<p><span class="fn-left gr">美国某某某，二日</span><span class="fn-right c">2分钟前</span></p>
+						</div>
+					</div>
+					
+					
 				</div>
 				
 				
@@ -316,6 +367,8 @@
 			<!-- main4 end -->
 		</div>
 		
+
+		
 		<script type="text/javascript">
 			$(function(){
 				uzaiDi.init();
@@ -334,7 +387,7 @@
 				selMap:function(){
 					$("a.J_toMap").bind("click",function(){
 						$(".J_worldMap").hide(300);
-						uzaiMap.aus("J_mapDom");
+						uzaiMap.china("J_mapDom");
 						$("#J_mapTitle").text($(this).attr("title")+"地图");
 					})
 					$("a.J_closeMap").bind("click",function(){
