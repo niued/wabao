@@ -42,7 +42,7 @@ dl{ margin:0; padding:0;}
 .dig-statusbox{ width:220px; background:#fff; }
 .dig-statusbox .title{ padding:0 10px; height:36px; line-height:36px; font-size:16px; color:#6e2f2f; border-bottom:1px solid #f7dea4; background:#fcfae5; font-weight:normal;}
 .dig-statusbox .title .total{margin-left:40px; color:#666; font-size:12px; font-weight:normal;}
-.dig-statusbox .content{ padding:14px 14px 5px;}
+.dig-statusbox .content{ padding:14px 14px 5px; position: relative;}
 .dig-statusbox .btn{height:40px; line-height:40px;}
 .dig-statusbox .ybtn{display:inline-block; width:87px; height:38px; line-height:38px; text-align:center; 
 			background:url(../images/user-status.png) no-repeat; font-size:18px; float:left; color:#730910;}
@@ -50,6 +50,7 @@ dl{ margin:0; padding:0;}
 .dig-statusbox .pitem{color:#eb2f4a;}
 .dig-statusbox .user-list{height:130px;}
 .dig-statusbox .user-list li{float:left; display:inline; width:28px; height:28px; margin:12px 0 0 13px;}
+.dig-statusbox .user-list li img{ width:28px; height:28px;}
 .dig-statusbox .method{ padding:13px;}
 .dig-statusbox .method .ntitle{ font-size:16px; color:#6e2f2f;  }
 .dig-statusbox .method .con{ text-indent:2em; line-height:20px;  }

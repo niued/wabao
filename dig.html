@@ -5,7 +5,6 @@
         <title>挖宝</title>
         <link href="css/global.css" rel="stylesheet" type="text/css" />
         <link href="css/wabao.css" rel="stylesheet" type="text/css" />
-        <link href="js/colorbox/example4/colorbox.css" type="text/css" rel="stylesheet" />
         <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/raphael.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/china.js" type="text/javascript" charset="utf-8"></script>
@@ -28,6 +27,20 @@
 		<div class="content-bg">
 			
 			<style>
+			#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:9999; overflow:hidden;}
+			#cboxOverlay{position:fixed; width:100%; height:100%; background:#333;}
+			#cboxMiddleLeft, #cboxBottomLeft{clear:left;}
+			#cboxContent{position:relative;}
+			#cboxLoadedContent{overflow:auto;}
+			#cboxTitle{margin:0;}
+			#cboxLoadingOverlay, #cboxLoadingGraphic{position:absolute; top:0; left:0; width:100%; height:100%;}
+			#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow{cursor:pointer;}
+			.cboxPhoto{float:left; margin:auto; border:0; display:block; max-width:none;}
+			.cboxIframe{width:100%; height:100%; display:block; border:0;}
+			#colorbox, #cboxContent, #cboxLoadedContent{box-sizing:content-box;}
+			#cboxClose{position:absolute; top:10px; right:15px; text-indent:-9999em; background:url(images/result-sprite.png) no-repeat; display:block; color:#444; width:18px; height:18px;}
+			
+			
 			.dig-main-map{float:left; position:relative;}
 			.detailmap{width:770px; height:510px; position:absolute; left:0; top:0;}
 			.detailmap .closemap{ text-indent:-9999em; position:absolute; top:25px; right:45px; width:21px; height:21px; display:block; background:url(images/mapclose24.png) no-repeat;}
@@ -58,7 +71,7 @@
 			
 			.wa_box .wa-main .ybtn{display:inline-block; width:96px; height:45px; line-height:45px; text-align:center; 
 			background:url(images/ybtn2.png) no-repeat; font-size:22px; color:#730910;}
-			.wa_box .wa-main .wa_chutou{ display:block;width:96px; height:45px; position:absolute; background:url(images/chutou.gif) center no-repeat;}
+			.wa_box .wa-main .wa_chutou{ display:block;width:96px; height:48px; position:absolute; background:url(images/chutou.gif) center no-repeat;}
 			.wa_box .jindu{ width:16px; height:46px; display:inline; margin-left:5px; background:url(images/jindu.png) no-repeat; position:relative;}
 			.wa_box .jindu-per{ position:absolute; background:#0099cc; width:6px; left:5px; bottom:6px; display:block;}
 			.wa_box .info{display:inline; margin-left:20px; padding:5px 0;}
@@ -67,6 +80,54 @@
 			.wa_box .wa-bottom{width:255px; height:55px; background:url(images/wa-bottom.png) no-repeat;}
 			.wa_box .wa-bottom p{padding:0 10px 0 65px; line-height:25px; }
 			.wa_box .wa-bottom .gr{width:125px;height:25px; overflow:hidden;}
+			
+			
+			
+			.result-box{width:480px; border:2px solid #71090f; border-radius:2px;background:#fff;}
+			.result-box .title{background:#f7ce1e; height:35px; line-height:35px; position:relative;}
+			.result-box .title h3{color:#cc3702; text-indent:20px;}
+			.result-box .con{padding:10px 20px;}
+			.result-box .con .item{text-align:center; line-height:30px; height:30px;}
+			.result-box .con .itemicon{text-align:center; }
+			.result-box .con .itemphone{ height:30px; line-height:30px; margin-top:15px;}
+			.result-box .con .itemword{ height:30px; line-height:30px; margin-top:10px;}
+			.result-box .con .iteminfo{margin-top:20px;}
+			.result-box .con .itemleave{margin-top:40px;text-align:center;}
+			.result-box .con .itemagain{margin:15px 0 40px 0;text-align:center;}
+			.result-box .con .itemNo{margin:15px 0 30px 0;text-align:center; height:128px;}
+
+			.result-box .lb{width:120px; text-align:right; float:left;}
+			.result-box .txt{ height:26px;border:1px solid #ccc; line-height:26px;}
+			.result-box .itemphone .txt{width:140px;}
+			.result-box .itemword .txt{width:250px; margin-right:4px;}
+			.result-box .pubbtn{width:58px; height:30px; background:url(images/result-sprite.png) 0 -22px no-repeat; line-height:30px; display:inline-block; color:#fff; font-size:14px; font-weight:bold; text-align:center; border:none; }
+			.result-box .againbtn{width:190px; height:37px; background:url(images/result-sprite.png) 0 -57px no-repeat; line-height:37px; display:inline-block; color:#fff; font-size:14px; font-weight:bold; text-align:center; border:none; }
+			.result-box .itemNo .notip{width:274px; height:85px; display:inline; margin-top:20px; float:right; background:url(images/result-sprite.png) 0 -100px no-repeat; text-align:left; color:#ff0000; font-size:22px; line-height:70px; text-indent:15px; }
+			
+			.wb-box{width:395px;}
+			.wb-box a{color:#0099cc; font-size:12px;}
+			.wb-box .wb-login{text-align:center; color:#780a11; padding:10px 0 0; font-size:16px; height:30px; line-height:30px;}
+			.wb-box .wb-reg{text-align:center; font-size:12px; height:30px;padding:0 0 10px; line-height:30px;}
+			.wb-box .wb-tip{ background:#fefbe4; padding:10px 20px 30px;}
+			.wb-box .wb-tip dt{color:#780a11;line-height:24px;}
+			.wb-box .wb-tip dd{line-height:20px;}
+			
+			.get-box{width:340px;border:2px solid #ccc; background:#fff;position:absolute; box-shadow:0px 0px 5px #999;  right:20px;top:80px;}
+			.get-box .itemlist{padding:20px 0 0 20px;}
+			.get-box .itemlist li{width:90px; height:90px;float:left; background:#ff0000; display:inline; margin:0 12px 12px 0; background:url(images/jiang.png) no-repeat;}
+			.get-box .itemlist .item1{background-position:0 0;}
+			.get-box .itemlist .item2{background-position:0px -104px;}
+			.get-box .itemlist .item3{background-position:0px -208px;}
+			.get-box .itemlist .item4{background-position:0px -312px;}
+			.get-box .itemlist .item5{background-position:-100px 0;}
+			.get-box .itemlist .item6{background-position:-100px -104px;}
+			.get-box .itemlist .item7{background-position:-100px -208px;}
+			.get-box .itemlist .item8{background-position:-100px -312px;}
+			.get-box .itemlist .item9{background-position:-200px 0;}
+			.get-box .itemlist .item10{background-position:-200px -104px;}
+			.get-box .itemlist .item11{background-position:-200px -208px;}
+			.get-box .close-getbox{position:absolute; top:5px; right:5px; text-indent:-9999em; background:url(images/result-sprite.png) no-repeat; display:block;  width:18px; height:18px;}
+			
 			</style>
 			
 			<!-- main begin -->
@@ -126,31 +187,77 @@
 							<p class="get">
 								<span>您已获得:</span>
 								<img src="images/qianicon.png" alt=""/>
-								<span class="pitem">100元现金抵用券</span>
-								<a href="#"><img src="images/dropicon.png" alt="" /></a>
+								<a href="javascript:;" class="pitem J_userPrize">100元现金抵用券</a>
+								<a href="javascript:;" class="J_userPrize"><img src="images/dropicon.png" alt="" /></a>
 							</p>
+							<div class="get-box J_userPrizeBox" style="display:none;">
+								<ul class="itemlist">
+									<li class="item1"></li>
+									<li class="item2"></li>
+									<li class="item3"></li>
+									<li class="item4"></li>
+									<li class="item5"></li>
+									<li class="item6"></li>
+									<li class="item7"></li>
+									<li class="item8"></li>
+									<li class="item9"></li>
+									<li class="item10"></li>
+									<li class="item11"></li>
+								</ul>
+								<div class="clearfix"></div>
+								<a class="close-getbox J_userPrizeClose" href="javascript:;"></a>
+							</div>
 						</div>
 					</div>
 					<div class="dig-statusbox mt10">
-						<h4 class="title">大家都在挖<a href="#" class="total">共20000人&gt;&gt;</a></h4>
-						<ul class="user-list">
-							<li><a href="#"><img src="images/headicon.png" /></a></li>
-							<li><a href="#"><img src="images/headicon.png" /></a></li>
-							<li><a href="#"><img src="images/headicon.png" /></a></li>
-							<li><a href="#"><img src="images/headicon.png" /></a></li>
-							<li><a href="#"><img src="images/headicon.png" /></a></li>
-							<li><a href="#"><img src="images/headicon.png" /></a></li>
-							<li><a href="#"><img src="images/headicon.png" /></a></li>
-							<li><a href="#"><img src="images/headicon.png" /></a></li>
-							<li><a href="#"><img src="images/headicon.png" /></a></li>
-							<li><a href="#"><img src="images/headicon.png" /></a></li>
-							<li><a href="#"><img src="images/headicon.png" /></a></li>
-							<li><a href="#"><img src="images/headicon.png" /></a></li>
-							<li><a href="#"><img src="images/headicon.png" /></a></li>
-							<li><a href="#"><img src="images/headicon.png" /></a></li>
-							<li><a href="#"><img src="images/headicon.png" /></a></li>
-							<i class="clearfix"></i>
-						</ul>
+						<h4 class="title">大家都在挖<a class="total">共20000人</a></h4>
+						<div class="contentuser">
+							<ul class="user-list">
+								<li><a href="javascript:;" class="J_info"><img src="images/headicon.png" /></a></li>
+								<li><a href="javascript:;" class="J_info"><img src="images/headicon.png" /></a></li>
+								<li><a href="javascript:;" class="J_info"><img src="images/headicon.png" /></a></li>
+								<li><a href="javascript:;" class="J_info"><img src="images/headicon.png" /></a></li>
+								<li><a href="javascript:;" class="J_info"><img src="images/headicon.png" /></a></li>
+								<li><a href="javascript:;" class="J_info"><img src="images/headicon.png" /></a></li>
+								<li><a href="javascript:;" class="J_info"><img src="images/headicon.png" /></a></li>
+								<li><a href="javascript:;" class="J_info"><img src="images/headicon.png" /></a></li>
+								<li><a href="javascript:;" class="J_info"><img src="images/headicon.png" /></a></li>
+								<li><a href="javascript:;" class="J_info"><img src="images/headicon.png" /></a></li>
+								<li><a href="javascript:;" class="J_info"><img src="images/headicon.png" /></a></li>
+								<li><a href="javascript:;" class="J_info"><img src="images/headicon.png" /></a></li>
+								<li><a href="javascript:;" class="J_info"><img src="images/headicon.png" /></a></li>
+								<li><a href="javascript:;" class="J_info"><img src="images/headicon.png" /></a></li>
+								<li><a href="javascript:;" class="J_info"><img src="images/headicon.png" /></a></li>
+								<i class="clearfix"></i>
+							</ul>
+							<style>
+							.info-box{width:280px;border:1px solid #ccc; background:#fff;position:absolute; box-shadow:0px 0px 5px #999;}
+							.info-box .c{color:#ccc;}
+							.info-box .blue{color:#0099cc;}
+							.info-box .top{height:108px;}
+							.info-box .top .vimg{margin:10px; display:inline;}
+							.info-box .top .detail{width:150px; height:85px; overflow:hidden; position:relative; margin:10px 0 0 0; display:inline;}
+							.info-box .top .detail dt{position:absolute; bottom:0px; right:0px;}
+							.info-box .top .detail dd{line-height:18px; margin-bottom:5px;}
+							
+							.info-box .close-infobox{position:absolute; top:5px; right:5px; text-indent:-9999em; background:url(images/result-sprite.png) no-repeat; display:block;  width:18px; height:18px;}
+							.info-box .bottom{background:#f3f3f3; padding:8px; line-height:18px;}
+							</style>
+							<div class="info-box J_infoBox" style="display:none;">
+								<div class="top">
+									<a href="javascript:;" class="vimg fn-left"><img src="images/img01.jpg" width="100px" height="80px;" alt="" /></a>
+									<dl class="detail fn-left">
+										<dd><span class="blue">何先生</span><span>139****8607:</span></dd>
+										<dd><span>挖中了</span><a href="#" class="blue">韩国首尔、济州5日游</a></dd>
+										<dt><span class="c">1分钟前</span></dt>
+									</dl>
+								</div>
+								<div class="bottom">
+									<p>奖后心声：我真是太幸运了，很高兴拿到了韩国的游票，太爱你了！</p>
+								</div>
+								<a class="close-infobox J_infoBoxClose" href="javascript:;"></a>
+							</div>
+						</div>
 					</div>
 					<div class="dig-statusbox mt10">
 						<dl class="method">
@@ -372,26 +479,9 @@
 			<!-- main4 end -->
 		</div>
 		
-		<style>
-			.result-box{width:480px; border:2px solid #71090f; border-radius:2px; margin:20px; background:#fff;}
-			.result-box .title{background:#f7ce1e; height:35px; line-height:35px; position:relative;}
-			.result-box .title h3{color:#cc3702; text-indent:20px;}
-			.result-box .con{padding:10px 20px;}
-			.result-box .con .item{text-align:center; line-height:30px; height:30px;}
-			.result-box .con .itemicon{text-align:center; }
-			.result-box .con .itemphone{ height:30px; line-height:30px; margin-top:15px;}
-			.result-box .con .itemword{ height:30px; line-height:30px; margin-top:10px;}
-			.result-box .con .iteminfo{margin-top:20px;}
 
-			.result-box .lb{width:120px; text-align:right; float:left;}
-			.result-box .txt{ height:26px;border:1px solid #ccc;}
-			.result-box .itemphone .txt{width:140px;}
-			.result-box .itemword .txt{width:250px; margin-right:4px;}
-			.result-box .pubbtn{width:58px; height:30px; background:url(images/result-sprite.png) 0 -22px no-repeat; line-height:30px; display:inline-block; color:#fff; font-size:14px; font-weight:bold; text-align:center; border:none; }
-			
-		</style>
-		<div class="result-box">
-			<div class="title"><h3>获奖提示</h3><a href="#"></a></div>
+		<div class="result-box" data-id="1">
+			<div class="title"><h3>获奖提示</h3></div>
 			<div class="con">
 				<div class="item"><span>恭喜您挖到了“欧洲七日游”免费旅游券</span></div>
 				<div class="itemicon"><img src="images/jiang01.jpg" width="280px" height="135px;" alt=""/></div>
@@ -401,17 +491,86 @@
 			</div>
 		</div>
 		
+		<div class="result-box" data-id="2">
+			<div class="title"><h3>幸运也许会再次光临</h3></div>
+			<div class="con">
+				<div class="itemleave"><span>剩余悠币数：10</span></div>
+				<div class="itemagain"><a href="#" class="againbtn">再玩一次(5悠币)</a></div>
+			</div>
+		</div>
+		
+		<div class="result-box" data-id="3">
+			<div class="con">
+				<div class="itemNo">
+					<img src="images/nomoney.gif" alt="" width="128px" height="128px" />
+					<span class="notip">您的悠币已经使用完！</span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="result-box wb-box">
+			<div class="wb-login">悠哉会员可以<a href="#">登录</a>挖宝</div>
+			<div class="wb-reg">不是会员，<a href="#">免费注册</a>……注册即送悠币！</div>
+			<dl class="wb-tip">
+				<dt>玩法提示：</dt>
+				<dd>登录或者注册后，就能拿起锄头“”挖宝喽！在悠哉旅游地图中所提供的43个悠哉宝藏埋藏地，花费5悠币可针对1个目的地进行1次挖宝。系统按一定奖品赚送概率回馈给参与者不同的宝藏（奖品）。</dd>
+			</dl>
+		</div>
+		
+		
 		<script type="text/javascript">
+		
+			//打开关闭用户奖品列表
+			$(function(){
+				$(".J_userPrize").bind('click',function(){
+					$(".J_userPrizeBox").show(500);
+				})
+				$(".J_userPrizeClose").bind('click',function(){
+					$(".J_userPrizeBox").hide(500);
+				})
+			})
+			////打开关闭用户奖品列表
+			$(function(){
+				$("a.J_info").bind('click',function(){
+					var that = $(this),
+					    pos = that.position();
+					$(".J_infoBox").show().css({left:pos.left-280+28,top:pos.top+28});
+				})
+				$("a.J_infoBoxClose").bind('click',function(){
+					$(".J_infoBox").hide();
+				})
+			})
+			
+			
+		
+		
 			$.fn.extend({
 				showWBtip:function(pos){
+					if(1==1){
+						$.noLogin();
+						return;
+					}
 					$("#J_waBox").show().css({"left":pos.left,"top":pos.top});
+				}
+			});
+			
+			$.extend({
+				noLogin:function(){
+					var htm=[];
+					htm.push('<div class="result-box wb-box">');
+					htm.push('<div class="wb-login">悠哉会员可以<a href="#">登录</a>挖宝</div>');
+					htm.push('<div class="wb-reg">不是会员，<a href="#">免费注册</a>……注册即送悠币！</div>');
+					htm.push('<dl class="wb-tip">');
+					htm.push('<dt>玩法提示：</dt>');
+					htm.push('<dd>登录或者注册后，就能拿起锄头“”挖宝喽！在悠哉旅游地图中所提供的43个悠哉宝藏埋藏地，花费5悠币可针对1个目的地进行1次挖宝。系统按一定奖品赚送概率回馈给参与者不同的宝藏（奖品）。</dd>');
+					htm.push('</dl></div>');
+					$.colorbox({html:htm.join(''),fixed:true,opacity:0.3,overlayClose:false,open:true});
 				}
 			});
 			
 			$(function(){
 				uzaiDi.init();
 
-				
 				//tab change
 				
 			})
@@ -437,11 +596,21 @@
 					})
 				},
 				waclick:function(){
+					var that = this;
 					$("#J_waBtn").bind("click",function(){
-						var that=$(this);
 						$("#J_waChuTou").show();
-						$.colorbox({html:$(".result-box"),fixed:true,opacity:0.1,overlayClose:false});
+						setTimeout(function(){
+							that._hideWaBox();
+							
+							var i = Math.floor(Math.random()*3);
+							$.colorbox({html:$(".result-box")[i],fixed:true,opacity:0.3,overlayClose:false,open:true});
+						},3000)
+						
 					})
+				},
+				_hideWaBox:function(){
+					$("#J_waBox").hide();
+					$("#J_waChuTou").hide();
 				}
 				
 			}
