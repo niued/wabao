@@ -9,7 +9,8 @@ dl{ margin:0; padding:0;}
 /*index style*/
 .dig-box{ width:990px; margin:0 auto 20px;}
 .dig-box-top{ height:39px; background:url(../images/box-tbg.jpg) no-repeat;}
-.dig-box-top .title{ height:39px; line-height:39px; color:#fff; font-size:18px; font-weight:normal;text-indent:20px;}
+.dig-box-top .title{ height:39px; line-height:39px; color:#fff; float:left; font-size:18px; font-weight:normal;text-indent:20px; float: left;}
+.dig-box-top .show-detail{ float: right; line-height:39px; color:#fcd67b; margin-right:20px;}
 .dig-box-content{background:#fff;}
 
 .stepbox .step-img{ height:130px; background:url(../images/step.jpg) no-repeat; position:relative;}
