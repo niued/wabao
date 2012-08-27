@@ -1,12 +1,7 @@
-/*
-* Copyright (c) 2011, ChinaSVGMap ,idd.chiang@gmail.com.
-* version: 1.0.2
-* buildTime: 2011/03/03
-* http://www.microidc.com
-*/
-var uzaiMap = {};
-var current = null;
+var uzaiMap = uzaiMap || {};
+
 uzaiMap.china = function(el){
+	var current = null;
 	var R = Raphael(el, 560,470);//大小与矢量图形文件图形对应；这是比较操蛋的地方高宽不自适应。560 470
 	var attr = {
 		"fill": "#825223",
@@ -95,11 +90,11 @@ text:R.text(340,405,"广西").attr(textattr)};
 			text:R.text(370,350,"湖南").attr(textattr)};
 		china.guizhou = { 
 			name : "贵州",
-			x:300,
+			x:320,
 			y:360,
 			hasPrize:false,
 			path : R.path("M313.622,349.296l-1.666,4.761l-2.856,0.951l-6.313-0.951l-1.43,1.429l-3.453-1.07l-3.094,4.286l1.428,1.43v2.856l1.431,2.501l6.309-1.906l1.908,1.667l-2.859,12.027l3.81,3.689l-1.188,6.907l3.688,0.238l4.051-3.695l1.668,1.073l7.737,3.216l1.429-0.832l0.235-2.622l1.433-1.429l10.955-7.144l1.903,2.265l6.668,2.021l3.689-4.883l1.668,1.192h2.619v-1.432l3.453-1.189v-1.071l1.43-1.428l0.832,0.237l3.453-3.452l-2.857-5.123l1.429-7.142l-1.785-2.263l-5.121,1.428l-0.596-0.834l5.717-6.309l-2.5-10.001l-3.81,2.855l-3.334-3.45l-3.215-4.29l-0.24-2.619l-2.26-0.477l-2.621,0.834l-4.287-2.024l-2.022,4.883l-3.691,0.239l-2.619,4.049l-1.666-0.834l-2.623,0.834l-3.928-2.266l-3.213,3.69v1.668l6.312,3.453l1.426,2.621c0,0-6.094,2.245-4.523,1.667C322.1,348.955,313.622,349.296,313.622,349.296z").attr(attr),
-			text:R.text(300,360,"贵州").attr(textattr)};
+			text:R.text(320,360,"贵州").attr(textattr)};
 		china.zhejiang = { 
 			name : "浙江",
 			x:465,
@@ -274,8 +269,14 @@ text:R.text(485,125,"吉林").attr(textattr)};
 		if(china[state]['text']){
 			china[state]['text'].toFront();
 		}
+		if(china[state]['img']){
+			china[state]['img'].toFront();
+		}
 		//china[state]['path'].color = Raphael.getColor(0.9);
 		(function (st,text,state) {
+			
+			$(st[0]).attr("transform","matrix(0.9,0,0,0.9,30,20)");
+			$(text[0]).attr("transform","matrix(0.9,0,0,0.9,30,30)");
 		
 			if(china[state].hasPrize){
 			

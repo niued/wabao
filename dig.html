@@ -7,7 +7,7 @@
         <link href="css/wabao.css" rel="stylesheet" type="text/css" />
         <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/raphael.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/china.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/chinan.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/jquery.colorbox.js" type="text/javascript" charset="utf-8"></script>
        
 	</head>
@@ -139,12 +139,12 @@
 						<a href="javascript:;" class="closemap J_closeMap">close</a>
 					</div>
 					<div class="worldmap J_worldMap">
-						<a href="javascript:;" class="map1 J_toMap" title="北美"></a>
-						<a href="javascript:;" class="map2 J_toMap" title="非洲"></a>
-						<a href="javascript:;" class="map3 J_toMap" title="欧洲"></a>
-						<a href="javascript:;" class="map4 J_toMap" title="亚洲"></a>
-						<a href="javascript:;" class="map5 J_toMap" title="中国"></a>
-						<a href="javascript:;" class="map6 J_toMap" title="澳洲"></a>
+						<a href="javascript:;" class="map1 J_toMap" data-id="1" title="北美"></a>
+						<a href="javascript:;" class="map2 J_toMap" data-id="2" title="非洲"></a>
+						<a href="javascript:;" class="map3 J_toMap" data-id="3" title="欧洲"></a>
+						<a href="javascript:;" class="map4 J_toMap" data-id="4" title="亚洲"></a>
+						<a href="javascript:;" class="map5 J_toMap" data-id="5" title="中国"></a>
+						<a href="javascript:;" class="map6 J_toMap" data-id="6" title="澳洲"></a>
 					</div>
 					<div class="maptitle"><span class="title" id="J_mapTitle">世界地图</span></div>
 					
@@ -596,8 +596,16 @@
 				//选择一个国家
 				selMap:function(){
 					$("a.J_toMap").bind("click",function(){
+						var d = $(this).attr("data-id");
+						if(d==5){
+							uzaiMap.china("J_mapDom");
+						}
+						if(d==6){
+							uzaiMap.aus("J_mapDom");
+						}
+					
 						$(".J_worldMap").hide(300);
-						uzaiMap.china("J_mapDom");
+						
 						$("#J_mapTitle").text($(this).attr("title")+"地图");
 					})
 					$("a.J_closeMap").bind("click",function(){
