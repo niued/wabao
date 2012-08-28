@@ -10,6 +10,8 @@
         <script src="js/china.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/aus.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/af.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/ya.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/eu.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/jquery.colorbox.js" type="text/javascript" charset="utf-8"></script>
        
 	</head>
@@ -560,7 +562,7 @@
 		
 			$.fn.extend({
 				showWBtip:function(pos){
-					if(1==1){
+					if(1==2){
 						$.noLogin();
 						return;
 					}
@@ -608,6 +610,13 @@
 						if(d==2){
 							uzaiMap.af("J_mapDom");
 						}
+						if(d==4){
+							uzaiMap.ya("J_mapDom");
+						}
+						if(d==3){
+							uzaiMap.eu("J_mapDom");
+						}
+
 					
 						$(".J_worldMap").hide(300);
 						
