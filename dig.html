@@ -8,6 +8,8 @@
         <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/raphael.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/zaus.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/zchina.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/zafica.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/draw.js" type="text/javascript" charset="utf-8"></script>
 
         <script src="js/jquery.colorbox.js" type="text/javascript" charset="utf-8"></script>
@@ -599,9 +601,14 @@
 				selMap:function(){
 					$("a.J_toMap").bind("click",function(){
 						var d = $(this).attr("data-id");
-						
+						if(d==5){
+							drawmap("J_mapDom",UMAP.china);
+						}
 						if(d==6){
 							drawmap("J_mapDom",UMAP.aus);
+						}
+						if(d==2){
+							drawmap("J_mapDom",UMAP.afica);
 						}
 						
 

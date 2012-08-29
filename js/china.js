@@ -264,7 +264,7 @@ text:R.text(485,125,"吉林").attr(textattr)};
 		china[state]['path'].scale(0.9,0.9);
 		china[state]['path'].translate((china[state]['path'].translate().matrix.e-30)*(-1/0.9),(china[state]['path'].translate().matrix.f-20)*(-1/0.9));
 		china[state]['text'].scale(0.9,0.9);
-		china[state]['text'].translate((china[state]['text'].translate().matrix.e-30)*(-1/0.9),(china[state]['text'].translate().matrix.f-20)*(-1/0.9));
+		china[state]['text'].translate((china[state]['text'].translate().matrix.e-30)*(-1/0.9),(china[state]['t'].translate().matrix.f-20)*(-1/0.9));
 		
 		if(china[state]['hasPrize']){
 			china[state]['path'].attr({"fill":"#f48029"});
