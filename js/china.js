@@ -261,7 +261,10 @@ text:R.text(485,125,"吉林").attr(textattr)};
 
 	for (var state in china) {
 		//分省区域着色
-		
+		china[state]['path'].scale(0.9,0.9);
+		china[state]['path'].translate((china[state]['path'].translate().matrix.e-30)*(-1/0.9),(china[state]['path'].translate().matrix.f-20)*(-1/0.9));
+		china[state]['text'].scale(0.9,0.9);
+		china[state]['text'].translate((china[state]['text'].translate().matrix.e-30)*(-1/0.9),(china[state]['text'].translate().matrix.f-20)*(-1/0.9));
 		
 		if(china[state]['hasPrize']){
 			china[state]['path'].attr({"fill":"#f48029"});
@@ -275,8 +278,11 @@ text:R.text(485,125,"吉林").attr(textattr)};
 		//china[state]['path'].color = Raphael.getColor(0.9);
 		(function (st,text,state) {
 			
-			$(st[0]).attr("transform","matrix(0.9,0,0,0.9,30,20)");
-			$(text[0]).attr("transform","matrix(0.9,0,0,0.9,30,30)");
+			
+			
+			
+			//$(st[0]).attr("transform","matrix(0.9,0,0,0.9,30,20)");
+			//$(text[0]).attr("transform","matrix(0.9,0,0,0.9,30,30)");
 		
 			if(china[state].hasPrize){
 			

@@ -7,11 +7,9 @@
         <link href="css/wabao.css" rel="stylesheet" type="text/css" />
         <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/raphael.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/china.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/aus.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/af.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/ya.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/eu.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/zaus.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/draw.js" type="text/javascript" charset="utf-8"></script>
+
         <script src="js/jquery.colorbox.js" type="text/javascript" charset="utf-8"></script>
        
 	</head>
@@ -601,21 +599,11 @@
 				selMap:function(){
 					$("a.J_toMap").bind("click",function(){
 						var d = $(this).attr("data-id");
-						if(d==5){
-							uzaiMap.china("J_mapDom");
-						}
+						
 						if(d==6){
-							uzaiMap.aus("J_mapDom");
+							drawmap("J_mapDom",UMAP.aus);
 						}
-						if(d==2){
-							uzaiMap.af("J_mapDom");
-						}
-						if(d==4){
-							uzaiMap.ya("J_mapDom");
-						}
-						if(d==3){
-							uzaiMap.eu("J_mapDom");
-						}
+						
 
 					
 						$(".J_worldMap").hide(300);
