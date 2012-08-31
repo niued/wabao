@@ -11,6 +11,8 @@
         <script src="js/zchina.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/zafica.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/zya.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/zeu.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/znor.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/draw.js" type="text/javascript" charset="utf-8"></script>
 
         <script src="js/jquery.colorbox.js" type="text/javascript" charset="utf-8"></script>
@@ -611,8 +613,14 @@
 						if(d==2){
 							drawmap("J_mapDom",UMAP.afica);
 						}
+						if(d==3){
+							drawmap("J_mapDom",UMAP.eu);
+						}
 						if(d==4){
 							drawmap("J_mapDom",UMAP.ya);
+						}
+						if(d==1){
+							drawmap("J_mapDom",UMAP.nor);
 						}
 						
 
@@ -631,11 +639,15 @@
 				waclick:function(){
 					var that = this;
 					$("#J_waBtn").bind("click",function(){
+						$("#J_waBtn").html("");
+						$("#J_waBtn").css("background","none");
 						$("#J_waChuTou").show();
 						setTimeout(function(){
+							$("#J_waBtn").html("挖");
 							that._hideWaBox();
 							
 							var i = Math.floor(Math.random()*3);
+							
 							$.colorbox({html:$(".result-box")[i],fixed:true,opacity:0.3,overlayClose:false,open:true});
 						},3000)
 						

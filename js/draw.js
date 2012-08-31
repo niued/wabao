@@ -7,7 +7,7 @@ function drawmap(el,map){
 	var attr = {
 		"fill": "#825223",
 		"stroke": "#ffde9d",
-		"stroke-width": 1,
+		"stroke-width": 1/map.sx,
 		"stroke-linejoin": "round"
 	};
 	//文本颜色
